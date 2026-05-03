@@ -217,5 +217,5 @@ GPL v2 or later
 
 ## 📧 联系方式
 
-- 官网：https://usememos.com
+- 官网：https://github.com/niudashebg/memos-showcase
 - 文档：https://usememos.com/docs

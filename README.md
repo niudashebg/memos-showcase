@@ -218,4 +218,4 @@ GPL v2 or later
 ## 📧 联系方式
 
 - 官网：https://github.com/niudashebg/memos-showcase
-- 文档：https://usememos.com/docs
+- 文档：https://github.com/niudashebg/memos-showcase/blob/main/README.md

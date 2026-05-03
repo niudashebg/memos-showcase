@@ -1,0 +1,398 @@
+/**
+ * Memos Showcase - 前端样式
+ * 所有样式都可以通过后台设置自定义
+ */
+
+/* CSS 变量 - 由 JavaScript 动态设置 */
+:root {
+    --memos-primary-color: #0070a8;
+    --memos-secondary-color: #00bcd4;
+    --memos-background-color: #ffffff;
+    --memos-text-color: #333333;
+    --memos-meta-color: #888888;
+    --memos-border-radius: 8px;
+    --memos-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --memos-font-size: 15px;
+    --memos-line-height: 1.6;
+    --memos-gap: 16px;
+    --memos-padding: 20px;
+    --memos-margin: 20px;
+}
+
+/* 基础容器 */
+.memos-showcase {
+    font-family: var(--memos-font-family);
+    margin: var(--memos-margin) 0;
+}
+
+.memos-showcase-header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.memos-showcase-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--memos-text-color);
+    margin: 0 0 8px 0;
+}
+
+.memos-showcase-subtitle {
+    font-size: 14px;
+    color: var(--memos-meta-color);
+    margin: 0;
+}
+
+.memos-showcase-content {
+    position: relative;
+}
+
+/* 链接样式 */
+.memo-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.memo-link:hover .memo-item {
+    border-color: var(--memos-primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 卡片式 */
+.memos-showcase-card .memo-item {
+    background: var(--memos-background-color);
+    border: 1px solid #eee;
+    border-radius: var(--memos-border-radius);
+    padding: var(--memos-padding);
+    margin-bottom: var(--memos-gap);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 左侧装饰条 */
+.memos-showcase-card .memo-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--memos-primary-color), var(--memos-secondary-color));
+}
+
+/* 列表式 */
+.memos-showcase-list .memo-item {
+    background: var(--memos-background-color);
+    border-bottom: 1px solid #eee;
+    padding: var(--memos-padding) 0;
+}
+
+.memos-showcase-list .memo-item:first-child {
+    padding-top: 0;
+}
+
+.memos-showcase-list .memo-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* 时间线式 */
+.memos-showcase-timeline {
+    position: relative;
+    padding-left: 24px;
+}
+
+.memos-showcase-timeline::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--memos-primary-color), var(--memos-secondary-color));
+}
+
+.memos-showcase-timeline .memo-item {
+    position: relative;
+    background: var(--memos-background-color);
+    border: 1px solid #eee;
+    border-radius: var(--memos-border-radius);
+    padding: var(--memos-padding);
+    margin-bottom: var(--memos-gap);
+    margin-left: 12px;
+}
+
+.memos-showcase-timeline .memo-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 24px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--memos-primary-color);
+    border: 2px solid var(--memos-background-color);
+}
+
+/* 极简式 */
+.memos-showcase-minimal .memo-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.memos-showcase-minimal .memo-item:last-child {
+    border-bottom: none;
+}
+
+/* 内容样式 */
+.memo-content {
+    font-size: var(--memos-font-size);
+    line-height: var(--memos-line-height);
+    color: var(--memos-text-color);
+    margin-bottom: 12px;
+    word-wrap: break-word;
+}
+
+.memo-content a {
+    color: var(--memos-primary-color);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--memos-primary-color);
+}
+
+.memo-content a:hover {
+    color: var(--memos-secondary-color);
+    border-bottom-color: var(--memos-secondary-color);
+}
+
+.memo-content code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    color: #e83e8c;
+}
+
+.memo-content strong {
+    font-weight: 600;
+}
+
+.memo-content em {
+    font-style: italic;
+}
+
+/* 元信息 */
+.memo-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--memos-meta-color);
+}
+
+.memo-date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.memo-date svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--memos-primary-color);
+}
+
+.memo-author {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.memo-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.memo-tag {
+    background: linear-gradient(135deg, var(--memos-primary-color), var(--memos-secondary-color));
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* 加载状态 */
+.memos-loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--memos-meta-color);
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--memos-primary-color);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 错误状态 */
+.memos-error {
+    background: #fff3f3;
+    border: 1px solid #ffcdd2;
+    border-radius: var(--memos-border-radius);
+    padding: 20px;
+    text-align: center;
+    color: #d32f2f;
+}
+
+.memos-error svg {
+    width: 24px;
+    height: 24px;
+    fill: #d32f2f;
+    margin-bottom: 8px;
+}
+
+/* 空状态 */
+.memos-empty {
+    background: #f9f9f9;
+    border-radius: var(--memos-border-radius);
+    padding: 30px;
+    text-align: center;
+    color: var(--memos-meta-color);
+}
+
+.memos-empty svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--memos-meta-color);
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+/* 悬停效果 - 上浮 */
+.hover-lift .memo-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 悬停效果 - 阴影 */
+.hover-shadow .memo-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 悬停效果 - 边框高亮 */
+.hover-border .memo-item:hover {
+    border-color: var(--memos-primary-color);
+}
+
+/* 加载动画 - 淡入 */
+.animation-fade .memo-item {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 加载动画 - 滑入 */
+.animation-slide .memo-item {
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 网格布局 */
+.memos-layout-grid .memos-showcase-content {
+    display: grid;
+    grid-template-columns: repeat(var(--memos-columns, 1), 1fr);
+    gap: var(--memos-gap);
+}
+
+/* 瀑布流布局 */
+.memos-layout-masonry .memos-showcase-content {
+    column-count: var(--memos-columns, 1);
+    column-gap: var(--memos-gap);
+}
+
+.memos-layout-masonry .memo-item {
+    break-inside: avoid;
+    margin-bottom: var(--memos-gap);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .memos-showcase {
+        margin: 15px 0;
+    }
+    
+    .memos-showcase-title {
+        font-size: 20px;
+    }
+    
+    .memo-content {
+        font-size: calc(var(--memos-font-size) - 1px);
+    }
+    
+    .memo-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .memos-layout-grid .memos-showcase-content {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .memos-layout-masonry .memos-showcase-content {
+        column-count: 1 !important;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .memos-showcase {
+        page-break-inside: avoid;
+    }
+    
+    .memo-item {
+        break-inside: avoid;
+    }
+    
+    .memos-loading,
+    .memos-error {
+        display: none;
+    }
+}

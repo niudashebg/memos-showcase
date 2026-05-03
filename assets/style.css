@@ -1,0 +1,134 @@
+/* Memos Widget 样式 */
+
+.memos-widget {
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+/* 卡片式 */
+.memos-widget-card .memo-item {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s;
+}
+
+.memos-widget-card .memo-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 列表式 */
+.memos-widget-list .memo-item {
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+
+.memos-widget-list .memo-item:last-child {
+    border-bottom: none;
+}
+
+/* 时间线 */
+.memos-widget-timeline {
+    position: relative;
+    padding-left: 20px;
+}
+
+.memos-widget-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #0070a8;
+}
+
+.memos-widget-timeline .memo-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 16px;
+}
+
+.memos-widget-timeline .memo-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #0070a8;
+}
+
+/* 内容样式 */
+.memo-content {
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.memo-content a {
+    color: #0070a8;
+    text-decoration: none;
+}
+
+.memo-content a:hover {
+    text-decoration: underline;
+}
+
+/* 元信息 */
+.memo-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #666;
+}
+
+.memo-date {
+    color: #999;
+}
+
+.memo-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.memo-tag {
+    background: #f0f7ff;
+    color: #0070a8;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+}
+
+/* 错误和空状态 */
+.memos-error {
+    background: #fff3f3;
+    border: 1px solid #ffcdd2;
+    color: #d32f2f;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.memos-empty {
+    background: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    color: #999;
+    border-radius: 4px;
+}
+
+/* 响应式 */
+@media (max-width: 600px) {
+    .memos-widget {
+        margin: 10px 0;
+    }
+    
+    .memos-widget-card .memo-item {
+        padding: 12px;
+    }
+}

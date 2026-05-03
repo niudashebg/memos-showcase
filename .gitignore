@@ -1,0 +1,37 @@
+# WordPress 插件打包文件
+*.zip
+
+# IDE 配置
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日志文件
+*.log
+npm-debug.log*
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# 上级目录文件（不提交 memos 主项目）
+../ANDROID_SETUP.md
+../Caddyfile
+../DEPLOY_GUIDE.md
+../FEISHU_INTEGRATION.md
+../docker-compose-feishu.yaml
+../docker-compose-with-caddy.yaml
+../docker-compose-wp.yaml
+../docker-compose.yaml
+../feishu-webhook.js
+../memos-showcase.zip
+../start.sh
